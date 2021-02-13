@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+# First PHP project
+  project1:
+    build:
+      context: .
+      dockerfile: ./project1/Dockerfile
+    volumes:
+      - ./host_www/:/var/www/html/
+    ports:
+      - "30001:80"
+# Second PHP project
+  project2:
+    build:
+      context: .
+      dockerfile: ./project2/Dockerfile
+    volumes:
+      - ./host_www/:/var/www/html/
+    ports:
+      - "30002:80"

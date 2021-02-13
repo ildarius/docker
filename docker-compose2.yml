@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+# First PHP project
+  centris_scraper:
+    build:
+      context: .
+      dockerfile: ./centris_scraper/Dockerfile
+    volumes:
+      - ../www/:/var/www/html/
+    ports:
+      - "30005:80"
